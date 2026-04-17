@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoBooth for Rose</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="photobooth-container">
+        <div class="header">
+            <h1>🎉 PhotoBooth Pro 🎉</h1>
+            <p>Strike a pose and create memories!</p>
+        </div>
+
+        <div class="main-interface">
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" autoplay muted playsinline></video>
+                    <canvas id="filterCanvas" class="canvas-overlay"></canvas>
+                    <div id="countdown" class="countdown"></div>
+                </div>
+                <div class="controls">
+                    <button id="captureBtn" class="btn btn-primary">📸 Capture</button>
+                    <button id="switchCameraBtn" class="btn btn-secondary">🔄 Switch Camera</button>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <h3>🎨 Filters</h3>
+                <div class="filter-grid">
+                    <button class="filter-btn active" data-filter="none" style="background: linear-gradient(45deg, #ffeaa7, #fab1a0);"></button>
+                    <button class="filter-btn" data-filter="grayscale" style="filter: grayscale(100%); background: #ddd;"></button>
+                    <button class="filter-btn" data-filter="sepia" style="filter: sepia(100%); background: #8b4513;"></button>
+                    <button class="filter-btn" data-filter="blur" style="filter: blur(2px); background: #3498db;"></button>
+                    <button class="filter-btn" data-filter="vintage" style="background: linear-gradient(45deg, #e17055, #d63031);"></button>
+                    <button class="filter-btn" data-filter="polaroid" style="background: linear-gradient(45px, #f7dc6f, #f39c12);"></button>
+                    <button class="filter-btn" data-filter="ocean" style="background: linear-gradient(45deg, #00b894, #00cec9);"></button>
+                    <button class="filter-btn" data-filter="sunset" style="background: linear-gradient(45deg, #fdcb6e, #e17055);"></button>
+                </div>
+            </div>
+
+            <div id="photostripSection" class="photostrip-section">
+                <h3>📸 Your PhotoStrip</h3>
+                <div class="photostrip">
+                    <div class="photostrip-header">PhotoBooth Memories</div>
+                    <canvas id="photostripCanvas"></canvas>
+                </div>
+                <div class="action-buttons">
+                    <button id="takeAnotherBtn" class="btn btn-secondary">📸 Take Another</button>
+                    <button id="printBtn" class="btn btn-primary">🖨️ Print Strip</button>
+                    <button id="downloadBtn" class="btn btn-danger">💾 Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
